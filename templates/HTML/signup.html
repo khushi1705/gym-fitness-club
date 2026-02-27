@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us - Gym & Fitness Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="/static/signup.css">
+    
+</head>
+<body>
+
+<!-- LEFT PANEL -->
+<div class="left-panel">
+    <div class="brand">GYM <span>&</span> FITNESS</div>
+    <div class="left-content">
+        <h1>START YOUR <span>FITNESS</span> JOURNEY</h1>
+        <p>Join hundreds of members who have already transformed their bodies and lives at Gym & Fitness Club, Boudha.</p>
+        <div class="perks">
+            <div class="perk"><div class="perk-icon"><i class="fa-solid fa-dumbbell"></i></div><div class="perk-text">Access to all state-of-the-art equipment</div></div>
+            <div class="perk"><div class="perk-icon"><i class="fa-solid fa-user-tie"></i></div><div class="perk-text">Expert trainers — Olivia, Celine & Juliet</div></div>
+            <div class="perk"><div class="perk-icon"><i class="fa-solid fa-people-group"></i></div><div class="perk-text">Unlimited group classes — Yoga, HIIT, Zumba</div></div>
+            <div class="perk"><div class="perk-icon"><i class="fa-solid fa-spa"></i></div><div class="perk-text">Spa & sauna (Premium members)</div></div>
+            <div class="perk"><div class="perk-icon"><i class="fa-solid fa-apple-whole"></i></div><div class="perk-text">Personalised nutrition guidance</div></div>
+        </div>
+    </div>
+    <div class="left-footer">© 2025 GYM & FITNESS CLUB · BOUDHA, KATHMANDU</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- RIGHT PANEL -->
+<div class="right-panel">
+    <div class="form-box">
+
+        <!-- FORM -->
+        <div id="signup-form">
+            <h2>CREATE ACCOUNT</h2>
+            <p class="subtitle">Fill in your details and pick a plan to get started</p>
+
+            <!-- PLAN SELECTOR -->
+            <div class="plan-selector">
+                <div class="plan-opt" onclick="selectPlan(this)">
+                    <div class="p-name">Standard</div>
+                    <div class="p-price">Rs 1,800/mo</div>
+                    <div class="p-check"><i class="fa-solid fa-check"></i></div>
+                </div>
+                <div class="plan-opt selected" onclick="selectPlan(this)">
+                    <div class="p-name">Premium</div>
+                    <div class="p-price">Rs 13,000/yr</div>
+                    <div class="p-check"><i class="fa-solid fa-check"></i></div>
+                </div>
+                <div class="plan-opt" onclick="selectPlan(this)">
+                    <div class="p-name">Personal</div>
+                    <div class="p-price">Rs 10,000/mo</div>
+                    <div class="p-check"><i class="fa-solid fa-check"></i></div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="input-group">
+                    <label>First Name</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Khushi" id="fname">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Last Name</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Ghimire" id="lname">
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <div class="input-wrap">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="you@example.com" id="email">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Phone Number</label>
+                <div class="input-wrap">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" placeholder="+977 98XXXXXXXX" id="phone">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="input-group">
+                    <label>Password</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="••••••••" id="pass">
+                        <button class="eye-btn" type="button" onclick="togglePass('pass',this)"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Confirm Password</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="••••••••" id="cpass">
+                        <button class="eye-btn" type="button" onclick="togglePass('cpass',this)"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="terms-row">
+                <input type="checkbox" id="terms">
+                <label for="terms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a> of Gym & Fitness Club</label>
+            </div>
+
+            <button class="register-btn" onclick="register()">JOIN NOW — START TODAY</button>
+
+            <div class="login-link">Already a member? <a href="login.html">Login here</a></div>
+        </div>
+
+        <!-- SUCCESS -->
+        <div class="success-msg" id="success-msg">
+            <div class="check-circle"><i class="fa-solid fa-check"></i></div>
+            <h3>WELCOME TO THE CLUB!</h3>
+            <p>Your account has been created successfully.<br>You're now part of the Gym & Fitness family!</p>
+            <a href="dashboard.html" class="go-dashboard">GO TO MY DASHBOARD</a>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function selectPlan(el) {
+        document.querySelectorAll('.plan-opt').forEach(p => p.classList.remove('selected'));
+        el.classList.add('selected');
+    }
+
+    function togglePass(id, btn) {
+        const inp = document.getElementById(id);
+        if (inp.type === 'password') {
+            inp.type = 'text';
+            btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+        } else {
+            inp.type = 'password';
+            btn.innerHTML = '<i class="fa-solid fa-eye"></i>';
+        }
+    }
+
+    function register() {
+        const fname = document.getElementById('fname').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const pass  = document.getElementById('pass').value;
+        const cpass = document.getElementById('cpass').value;
+        const terms = document.getElementById('terms').checked;
+
+        if (!fname || !email || !phone || !pass) {
+            alert('Please fill in all required fields!');
+            return;
+        }
+        if (pass !== cpass) {
+            alert('Passwords do not match!');
+            return;
+        }
+        if (!terms) {
+            alert('Please agree to the Terms & Conditions!');
+            return;
+        }
+
+        // Show success
+        document.getElementById('signup-form').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

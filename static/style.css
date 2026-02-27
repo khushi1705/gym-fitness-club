@@ -1,0 +1,747 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+/* NAVBAR */
+
+#navbar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+
+    background: rgb(57, 43, 58);
+    z-index: 9999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+body{
+    margin:0;
+    padding-top: 120px;
+}
+
+header nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+   background:url("../static/asset/1.jpg") no-repeat center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    
+    
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    width: 150px;
+    padding: 10px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* ABOUT */
+
+
+
+/* The main section now stacks vertically */
+.about {
+    padding: 80px 10% 80px 10%;
+    background: #fff;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Centers the "ABOUT US" title */
+    gap: 40px; /* Space between title and content */
+    
+}
+
+/* Style for the "ABOUT US" at the top */
+.section-title {
+    font-size: 45px;            /* Keeps it big and bold */
+    font-weight: 600;           
+    color: #46345b;     
+    margin-bottom: 50px;        
+    text-align: center;
+    width: 100%;                
+    text-transform: uppercase;
+    /* Border and padding removed to get rid of the underline */
+}
+
+/* The wrapper that holds the text and image side-by-side */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap:80px;
+}
+
+.about-text {
+    flex: 100%;
+    max-width: 500vh;
+    
+}
+.about-text h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: -40px; /* Adjust this number: -50px moves it higher, -10px moves it less */
+    margin-bottom: 20px;
+    color: #634a7d;
+}
+
+.about-image {
+    margin-left: auto;
+    width: 700px;
+    height: auto;
+    border-radius: 12px 0 0 12px;
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.1);
+}
+
+/* CLASSES */
+/* --- SERVICES SECTION --- */
+.classes {
+    padding: 60px 5%;
+    text-align: center;
+    background-color: #fdfdfd;
+    
+    
+}
+
+.classes h2 {
+    font-size: 36px;
+    color: #634a7d; /* Your Gym Purple */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* The container for the cards */
+.class-box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Keeps them responsive */
+}
+
+/* Individual Card */
+.card {
+    width: 320px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden; /* Clips the image corners */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03); /* Slight pop effect */
+}
+
+/* THE IMAGE FIX: Forces all different pics to be same size */
+.card img {
+    width: 100%;      /* Fills the card width */
+    height: 250px;    /* Forces them to be the same height */
+    object-fit: cover; /* Crops the images so they don't look stretched */
+    display: block;
+}
+
+/* Service Title Styling */
+.card h3 {
+    padding: 20px;
+    color: #333;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #fff;
+    margin: 0;
+}
+#services h2 {
+  text-align: center;
+  margin-bottom: 40px;
+    color: #634a7d;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.btn {
+    position: absolute;     /* fixed relative to viewport */
+    right: 50vh;         /* distance from right edge */
+    top: 60%;            /* vertical center */
+    transform: translateY(-50%); /* perfect vertical centering */
+    padding: 10px 20px;
+    background:rgb(57, 43, 58);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    left: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+/* Gallery Section Container */
+.Gallery {
+    padding: 80px 10%;
+    background: #fdfdfd;
+    text-align: center;
+}
+
+.Gallery h2 {
+    font-size: 42px;
+    margin-bottom: 40px;
+    font-weight: 800;
+    color: #634a7d;
+}
+
+/* The box holding the images */
+.pic1 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;            /* Space between images */
+    flex-wrap: wrap;      /* Allows images to go to next line on small screens */
+}
+
+/* Individual Image Styling */
+.pic1 img {
+    width: 350px;         /* Adjust this size as needed */
+    height: 250px;        /* Fixed height keeps the row looking even */
+    object-fit: cover;    /* Crops image to fit the box without stretching */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Zoom effect when you mouse over an image */
+.pic1 img:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 10px 20px rgba(112, 72, 72, 0.2);
+}
+/* 1. Basic Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. The Main Footer Background */
+.footer {
+    background-color:  rgb(57, 43, 58); /* That nice deep purple from your gym photo */
+    color: white;
+    padding: 60px 20px 20px 20px;
+}
+
+/* 3. Making the Columns sit side-by-side */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* This makes it look good on mobile phones */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 4. Column Styling */
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.footer-col h3 {
+    color: #ff8c00; /* Bright orange for the titles */
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.footer-col p {
+    line-height: 1.6;
+    color: #f0f0f0;
+    font-size: 14px;
+}
+
+/* 5. Styling the Quick Links */
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #ff8c00; /* Turns orange when you point at it */
+    padding-left: 5px;
+}
+
+/* 6. Input and Button Styling */
+.sub-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.sub-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff8c00; /* Orange Button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+.sub-btn:hover {
+    background-color: #e67e00;
+}
+
+/* 7. Bottom Section */
+hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 40px 0 20px 0;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 13px;
+    color: #bbb;
+}
+/* 1. Style the main Contact section */
+.Contact {
+    padding: 60px 10%;
+    text-align: center; /* This centers the "Contact Us" h1 */
+    background-color: #f4f4f4; /* Light background to see the layout */
+}
+
+/* 2. Style the Main Title */
+.Contact h1 {
+    font-size: 40px;
+    color: #634a7d; /* Your Gym Purple */
+    margin-bottom: 30px;
+}
+
+/* 3. Create the Left/Right split */
+/* Note: For this to work perfectly, your inputs and map 
+   should be inside a div. If they aren't, this will still help. */
+.Contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* This targets everything under the H1/H2 to align left */
+.Contact h2, 
+.Contact .sub-input, 
+.Contact .sub-btn {
+    display: block;
+    width: 45%; /* Keeps the form on the left half */
+    margin-right: auto; /* Pushes them to the left */
+    text-align: left;
+}
+
+/* 4. Style the Inputs */
+.sub-input {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* 5. Style the Button */
+.sub-btn {
+    background-color: #ff8c00; /* Your Gym Orange */
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 15px;
+}
+
+.sub-btn:hover {
+    background-color: #634a7d;
+}
+
+/* 6. Mobile Responsiveness */
+@media (max-width: 768px) {
+    .Contact .sub-input, 
+    .Contact .sub-btn {
+        width: 100%; /* Becomes full width on phones */
+    }
+}
+/* --- TESTIMONIALS SECTION --- */
+.testimonials {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #f9f9f9; /* Light grey background */
+}
+
+.testimonials h2 {
+    font-size: 40px;
+    color: #634a7d; /* Your Gym Purple */
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Container for the 3 cards */
+.testimonials .classes-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Space between cards */
+    flex-wrap: wrap; /* Good for mobile screens */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* The Individual Card */
+.card1 {
+    background: #ffffff;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 320px; /* Wider card to fit bigger pictures */
+    transition: all 0.4s ease;
+    border-bottom: 5px solid transparent;
+}
+
+/* Lift card and add orange border on hover */
+.card1:hover {
+    transform: translateY(-15px);
+    border-bottom: 5px solid #ff8c00;
+}
+
+/* THE IMAGE FIX - BIG & ROUND */
+.card1 img {
+    width: 220px;         /* Big size */
+    height: 220px;        /* Matches width for perfect circle */
+    border-radius: 50%;   /* Makes it round */
+    object-fit: cover;    /* Prevents stretching */
+    border: 6px solid #634a7d; /* Purple ring around photo */
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+/* Image changes to orange ring on hover */
+.card1:hover img {
+    border-color: #ff8c00;
+}
+
+/* The Name Styling */
+.card1 h3 {
+    color: #333;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.card1:hover h3 {
+    color: #ff8c00; /* Name turns orange on hover */
+}
+/* Styling for the testimonial description */
+.testimonial-text {
+    font-size: 16px;
+    color: #555; /* Soft grey color */
+    line-height: 1.6; /* Adds space between lines for easy reading */
+    font-style: italic; /* Makes it look like a quote */
+    margin-top: 15px;
+    padding: 0 10px;
+}
+
+/* Optional: Add small quote marks before the text */
+.testimonial-text::before {
+    content: '“';
+    font-size: 30px;
+    color: #ff8c00; /* Your Gym Orange */
+    display: block;
+    margin-bottom: -10px;
+}
+
+/* Make sure the card grows to fit the text */
+.card1 {
+    min-height: 450px; /* Adjust this so all cards stay the same height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* --- TRAINERS SECTION --- */
+.Trainers {
+    padding: 60px 10%;
+    text-align: center;
+    background-color: #fff;
+}
+
+.Trainers h2 {
+    font-size: 36px;
+    color: #634a7d; /* Your Gym Purple */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* This is the MAGIC part that puts them side-by-side */
+.Trainers .classes {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap; /* This makes sure they stack on phones but stay in a row on laptops */
+}
+
+/* Individual Card Styling */
+.card2 {
+    width: 300px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    padding-bottom: 20px;
+}
+
+.card2:hover {
+    transform: translateY(-10px);
+}
+
+/* Trainer Images */
+.card2 img {
+    width: 100%;
+    height: 350px; /* Tall rectangular look */
+    object-fit: cover;
+    display: block;
+}
+
+/* Trainer Name */
+.card2 h3 {
+    margin: 20px 0 10px;
+    color: #634a7d;
+    font-size: 22px;
+}
+
+/* The Paragraph Text (trainer-info) */
+.trainer-info {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+/* --- MEMBERSHIP PLANS SECTION --- */
+.CLASSES {
+    padding: 80px 5%;
+    background-color: #f4f4f4; /* Light grey to make cards pop */
+    text-align: center;
+}
+
+.CLASSES h2 {
+    font-size: 36px;
+    color: #634a7d; /* Your Gym Purple */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* Container for the 3 cards */
+.CLASSES .classes-box {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* The Pricing Card */
+.CLASSES .card {
+    background: #fff;
+    width: 320px;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+    border-top: 8px solid #634a7d; /* Purple top border */
+}
+
+/* Highlight the middle card (Premium) to make it stand out */
+.CLASSES .card:nth-child(2) {
+    border-top: 8px solid #ff8c00; /* Orange top for the "best" plan */
+    transform: scale(1.05);
+}
+
+.CLASSES .card:hover {
+    transform: translateY(-10px);
+}
+
+/* Plan Title */
+.CLASSES .card h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* The Price */
+.CLASSES .card h2 {
+    font-size: 24px;
+    color: #ff8c00; /* Your Gym Orange */
+    margin-bottom: 25px;
+}
+.CLASSES .card::after {
+    cursor: pointer;
+}
+/* The Features List */
+.plan-info {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8;
+    text-align: left; /* Features look better aligned left */
+    white-space: pre-line; /* This keeps your text on separate lines! */
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+/* Optional: Add a button to make it look complete */
+.CLASSES .card::after {
+    content: 'CHOOSE PLAN';
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #634a7d;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.Services {
+
+    background: #fdfdfd;
+    text-align: center;
+
+}
+/* Classes Section */
+#classes {
+    padding: 100px 20px; /* more spacing for epic feel */
+    background-color: #f4f4f4; /* light neutral background */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+#classes h2 {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    color: #222;
+    font-weight: 700;
+    position: relative;
+}
+
+/* Optional underline for heading */
+
+
+/* Cards container */
+.classes-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Individual card */
+.card4 {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 320px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Card image */
+.card4 img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+/* Card title */
+.card4 h3 {
+    font-size: 1.6rem;
+    color: #222;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Card paragraph */
+.card4 p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Hover effect */
+.card4:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.card4:hover img {
+    transform: scale(1.05); /* subtle image zoom on hover */
+}
+
